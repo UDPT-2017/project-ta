@@ -1,6 +1,6 @@
 var http = require("http");
-
-
+var https = require('https');
+var fs= require('fs');
 var getlink = {
   getSource: function (url) {
     if (url.search('youtu') != -1){
@@ -64,6 +64,49 @@ getMp3zing: function(id,callback){
     })
 },
 
+getLinkFromSource: function(data,callback){
+  var a;
+  a =data.indexOf("{};ytplayer.config")+21;
+  //console.log(a);
+  var result = data.substring(a);
+    var b =result.indexOf(";ytplayer.load");
+
+  result = result.substring(0,b)
+  result  = result.replace(/\\u0026/g,"&");
+  result = JSON.parse('"'+result+'"');
+  callback(result);
+  // console.log(JSON.parse(data));
+
+
+},
+getYoutube: function(id,callback){
+  url="/watch?v="+id;
+  var str;
+  var last ;
+                  var options = {
+                  host: 'www.youtube.com',
+                  path: url,
+                };
+
+              var req= https.get(options, function(res) {
+                          res.setEncoding('utf8');
+                          res.on('data', function (chunk) {
+                                      str += chunk;
+                          });
+
+                          res.on('end', function () {
+                                    // console.log(req.data);
+                                   // console.log(str);
+                                    // your code here if you want to use the results !
+                                    getlink.getLinkFromSource(str,function(data){
+                                      console.log(data);
+                                    })
+                                  });
+
+               });
+
+
+},
 
 
 
@@ -75,8 +118,16 @@ getLinkDownload : function (id,callback) {
     });
 
   }else{
+    if(id.length==11){
+      // console.log(id);
+      getlink.getYoutube(id,function(data){
+        callback(data);
+      })
 
-    callback(false);
+    }else{
+      callback(false);
+    }
+
   }
 },
 
