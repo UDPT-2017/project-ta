@@ -36,11 +36,9 @@ var getlink = {
     }
   },
 
-
-
-getLinkDownload : function (id,callback) {
-  if(id.length==8){
-    var url = 'http://api.mp3.zing.vn/api/mobile/song/getsonginfo?requestdata=%7B%22id%22:%22'+ id +'%22%7D';
+getMp3zing: function(id,callback){
+ var url = 'http://api.mp3.zing.vn/api/mobile/song/getsonginfo?requestdata=%7B%22id%22:%22'+ id +'%22%7D';
+ // console.log(url);
     http.get(url, function (response) {
       // so we have to handle the "data" event
          var buffer = "",
@@ -54,11 +52,28 @@ getLinkDownload : function (id,callback) {
          response.on("end", function (err) {
              // finished transferring data
              // dump the raw data
-             data = JSON.parse(buffer);
+             try {
+                            data = JSON.parse(buffer);
+                    } catch (e) {
+                            console.log("not JSON");
+                            callback(false);
+                    }
              callback(data);
          });
 
     })
+},
+
+
+
+
+getLinkDownload : function (id,callback) {
+  if(id.length==8){
+   // console.log(id);
+    getlink.getMp3zing(id,function(data){
+      callback(data);
+    });
+
   }else{
 
     callback(false);
@@ -67,13 +82,15 @@ getLinkDownload : function (id,callback) {
 
   index : function (req,res) {
     var url = req.param('urldata');
+    // console.log(url);
     var id = getlink.getMediaId(url);
+        // console.log(id);
     getlink.getLinkDownload(id,function (data){
       if(!data){
         res.render('getlink',{
-          songname:"Noname",
-          artist:"Nobody",
-          download128:"No Link",
+          songname:"PLEASE TRY AGIAN!",
+          artist:"",
+          download128:"",
           thumbnail:"https://s-media-cache-ak0.pinimg.com/564x/41/f4/c6/41f4c62da9793a67529546f21f87ef03.jpg"
       })
     }else{
