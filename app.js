@@ -5,8 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var http = require('http');
+var mongoose = require('mongoose');
+
+mongoose.connect('admin:admin@ds129342.mlab.com:29342/simpleblog');
+db = mongoose.connection;
 
 var index = require('./routes/index');
+var postrouter = require('./routes/post');
+
 //var category = require('./routes/category');
 // var post = require('./routes/post');
 // var admin = require('./routes/admin');
@@ -21,11 +27,13 @@ app.set('view engine', 'hbs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/post', postrouter);
+
 // app.use('/:category', category);
 // app.use('/:category/:post',post);
 

@@ -1,28 +1,31 @@
 $(document).ready(function(){
-	blogOnPageLoad();
+	blogMenuLoad();
 });
 
 blogMenuLoad = function() {
-	api("GET","/getTitle",null,function(err,result){
+	api.get("/title",null,function(err,result){
 		if(err) {}
 		else{
-			console.log("result");
-			$('.blog-title').html(result);
+			var result = JSON.parse(result);
+			// console.log(re);
+			$('.blog-title').html(result.title);
+			$(".navbar-text").html(result.slogan);
+
 		}
 	});
 
 };
 
-blogTitleLoad =	function() {
-	$('.blog-menu').html("Sample Blog Menu");
+// blogTitleLoad =	function() {
+// 	$('.blog-menu').html("Sample Blog Menu");
 
-};
-blogSloganLoad = function(){
-	$(".navbar-text").html("Signed in as Mark Otto");
-}
+// };
+// blogSloganLoad = function(){
+// 	$(".navbar-text").html("Signed in as Mark Otto");
+// // }
 
-blogOnPageLoad = function(){
-	blogTitleLoad();
-	blogSloganLoad();
-	blogMenuLoad();
-};
+// blogOnPageLoad = function(){
+// 	blogTitleLoad();
+// 	blogSloganLoad();
+// 	blogMenuLoad();
+// };
