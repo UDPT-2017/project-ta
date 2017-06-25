@@ -17,8 +17,9 @@ load5Post = function(){
 		
 			}
 		);
+		$(".index-post-group.col-md-12.col-sm-12.col-ld-12").append('<div class="load-more">Xem thêm</div>');
 		getDetailPost();
-
+		getmorepost();
 	});
 }
 
@@ -52,4 +53,31 @@ getDetailPost = function(){
 		load5Post();
 	});
 
+}
+
+getmorepost = function(){
+	$(".load-more").on("click",function(e){
+		var id = $(e.currentTarget).prev().attr("id");
+		console.log(id);
+		var dataID={
+			postId:id,
+		};
+		console.log(dataID);
+
+		api.post('/getmore',dataID,function(err,result){
+			if (err) throw "err";
+			result.map(k => {
+				$(".index-post-group.col-md-12.col-sm-12.col-ld-12").append("<div class='post-item' id='"+k._id+"'>"+
+																			"<div class='post-title'>"+k.name+"</div>"+
+																			"<div class='post-contents'>"+k.contents+"</div>"+
+																		"</div>");
+			
+				}
+			);
+			$('.load-more').remove();
+			$(".index-post-group.col-md-12.col-sm-12.col-ld-12").append('<div class="load-more">Xem thêm</div>');
+			getmorepost();
+
+		})
+	});
 }

@@ -78,3 +78,25 @@
     display: inline-block;
 
 }
+.load-more{
+	margin-top: 30px;
+	font-size: 5vh;
+	font-weight: 700;
+    background-color: #2E9AFE;
+    color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    display: inline-block;
+    padding:10px;
+    text-align: center;
+    line-height: 100%;
+}
+.load-more:hover{
+	background-color: #0066FF;
+	box-shadow: 1px 1px 3px #0066FF;
+}
+
+.newsfeed:hover{
+	background-color: #0066FF;
+	box-shadow: 1px 1px 3px #0066FF;
+}

@@ -9,6 +9,8 @@ router.get('/',index.home);
 router.get('/title',index.loadTitle);
 router.put('/title',userHandlers.loginRequired,index.updateTitle);
 router.get('/getpost',index.load10Post);
+router.post('/getmore',index.loadMorePost);
+
 router.post('/login',userHandlers.login);
 router.post('/reg',userHandlers.loginRequired,userHandlers.addUser);
 

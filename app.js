@@ -12,6 +12,7 @@ db = mongoose.connection;
 
 var index = require('./routes/index');
 var postrouter = require('./routes/post');
+var user = require('./routes/user');
 
 //var category = require('./routes/category');
 // var post = require('./routes/post');
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/post', postrouter);
+app.use('/user', user);
 
 // app.use('/:category', category);
 // app.use('/:category/:post',post);

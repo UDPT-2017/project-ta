@@ -93,6 +93,31 @@ var index = {
 			res.json(result);
 		});
 	},
+	loadMorePost: function(req,res){
+		Post.find({}).exec(function(err,data){
+			var i,j,t,result=[];
+			//console.log(req);
+			for(i=0;i<data.length;i++){
+				//console.log(data[i]._id);
+				//console.log(req.body.postId);
+				if(data[i]._id==req.body.postId){
+					break;
+				}
+			};
+			console.log(i);
+			for(j=i-1,t=0;j>(i-10),j>0,t<10;j--,t++){
+				 // console.log(j);
+				 // console.log(t);
+				 if(j<0) break;
+				if(data[j].contents.length>300) data[j].contents = data[j].contents.slice(0,300);
+				result[t]=data[j];
+				// console.log(t);
+
+			};
+			res.json(result);
+	
+		});
+	}
 
 }
 
