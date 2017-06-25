@@ -6,8 +6,10 @@ Thành viên:
 * [x] **1412002** - Dương Trường An - truongan106 - truongan106@gmail.com - 100%
 
 URL: **https://github.com/UDPT-2017/project-ta/**
-Báo cáo: **URL Github Page của đề tài**
-Website: 
+
+Báo cáo: **https://github.com/UDPT-2017/project-ta/blob/master/bao%20cao%20udpt.pdf**
+
+Website: https://calm-badlands-11732.herokuapp.com/
 ## Yêu cầu
 
 Trong đề tài, sinh viên cần mô tả các chức năng có thể thực hiện bên dưới. Sinh viên check vào các mục bên dưới và ghi mã sinh viên đã làm vào chức năng theo mẫu. Mục nào ko có MSSV là tính điểm theo nhóm. Cần sắp xếp các chức năng bên dưới theo thứ tự MSSV đã thực hiện.
