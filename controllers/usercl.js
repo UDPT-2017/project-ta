@@ -2,7 +2,7 @@ var User = require('../models/userModel');
 let toMD5 = require('./hashPassword');
 let jwt = require('jsonwebtoken');
 var mongoose = require('mongoose');
-var Cookies = require('cookies')
+// var Cookies = require('cookies')
 
 var nguoidung = {
 	login:function(req,res){
