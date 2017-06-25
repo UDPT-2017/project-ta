@@ -82,11 +82,13 @@ var index = {
 		});
 	},
 
-	load5Post: function(req,res){
+	load10Post: function(req,res){
 		Post.find({}).exec(function(err,data){
 			var i,j,result=[];
-			for(i=data.length -1,j=0;i>data.length -5,j<5;i--,j++){
+			for(i=data.length -1,j=0;i>data.length -10,j<10;i--,j++){
+				if(data[i].contents.length>300) data[i].contents = data[i].contents.slice(0,300);
 				result[j]=data[i];
+				// console.log(data[i]);
 			}
 			res.json(result);
 		});

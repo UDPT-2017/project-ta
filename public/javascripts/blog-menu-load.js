@@ -9,7 +9,7 @@ blogMenuLoad = function() {
 			var result = JSON.parse(result);
 			// console.log(re);
 			$('.blog-title').html(result.title);
-			$(".navbar-text").html(result.slogan);
+			$(".blog-slogan").html(result.slogan);
 
 		}
 	});

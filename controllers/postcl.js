@@ -29,8 +29,8 @@ var baiviet={
 	},
 
 	loadPost:function(req,res){
-		console.log(req.body.id);
-		Post.findOne({postId:req.body.id}).exec(function(err,result){
+		//console.log(req);
+		Post.findOne({_id:req.body.postId}).exec(function(err,result){
 			if(err) throw "err";
 			res.json(result);
 		});
