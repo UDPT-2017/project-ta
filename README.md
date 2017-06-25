@@ -3,46 +3,42 @@
 **Name of your app** là repository cho đồ án nhóm. Nhóm tối đa 4 thành viên.
 
 Thành viên:
-* [ ] **MSSV1** - Tên sinh viên 1 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
-* [ ] **MSSV2** - Tên sinh viên 2 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
-* [ ] **MSSV3** - Tên sinh viên 3 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
-* [ ] **MSSV4** - Tên sinh viên 4 - tên tài khoản github - email - Tỉ lệ đóng góp cho đề tài
+* [x] **1412002** - Dương Trường An - truọngan106 - truongan106@gmail.com - 100%
 
-URL: **URL hosting của đề tài**
+URL: **https://github.com/UDPT-2017/project-ta/**
 Báo cáo: **URL Github Page của đề tài**
-
+Website: 
 ## Yêu cầu
 
 Trong đề tài, sinh viên cần mô tả các chức năng có thể thực hiện bên dưới. Sinh viên check vào các mục bên dưới và ghi mã sinh viên đã làm vào chức năng theo mẫu. Mục nào ko có MSSV là tính điểm theo nhóm. Cần sắp xếp các chức năng bên dưới theo thứ tự MSSV đã thực hiện.
 
 Làm việc nhóm:
-* [ ] Có sử dụng GIT.
+* [x] Có sử dụng GIT.
 * [ ] Sử dụng GIT theo Centralized Workflow.
 * [ ] Sử dụng GIT theo Feature Branch Workflow.
 * [ ] Sử dụng GIT theo Gitflow Workflow.
 
 ## Mô tả nghiệp vụ chung ứng dụng
-Phần mô tả đặt vào đây
-
+Ứng dụng simple blog là trang web blog cá nhân, có chức năng viết blog, hiển thị blog, đăng nhập.
 ## Lập trình server
 ### MVC
-* [ ] MVC (MSSV1)
-* [ ] Config (MSSV1)
-* [ ] REST routing (MSSV1)
-* [ ] Layout & partial (MSSV1)
+* [x] MVC (1412002)
+* [x] Config (1412002)
+* [x] REST routing (1412002)
+* [x] Layout & partial (1412002)
 
 ### Lập trình dữ liệu
-* [ ] Thêm (MSSV1)
-* [ ] Xóa (MSSV1)
-* [ ] Sửa (MSSV1)
+* [x] Thêm (1412002)
+* [x] Xóa (1412002)
+* [x] Sửa (1412002)
 * [ ] Tìm kiếm (MSSV1)
 
 ### Xử lý lỗi
-* [ ] Xử lý lỗi trong cùng trang web (MSSV1)
+* [x] Xử lý lỗi trong cùng trang web (1412002)
 * [ ] Xử lý lỗi dùng trang web riêng (MSSV1)
-   * [ ] 401 (MSSV1)
-   * [ ] 404 (MSSV1)
-   * [ ] 500 (MSSV1)
+   * [x] 401 (1412002)
+   * [x] 404 (1412002)
+   * [x] 500 (1412002)
 
 ### Tương tác API khác
 Liệt kê các API nhóm đã sử dụng được ở đây
@@ -52,9 +48,9 @@ Liệt kê các API nhóm đã sử dụng được ở đây
 
 ## Lập trình client
 * [ ] Kiểm tra dữ liệu (MSSV1)
-* [ ] Animation (MSSV1)
-* [ ] Thao tác DOM (MSSV1)
-* [ ] AJAX (MSSV1)
+* [x] Animation (1412002)
+* [x] Thao tác DOM (1412002)
+* [x] AJAX (1412002)
 
 ## Bảo mật
 * [ ] Chứng thực (MSSV1)
@@ -75,7 +71,7 @@ Các **yêu cầu chức năng** (check và ghi MSSV vào các phần chức nă
 
 Link ảnh GIF demo ứng dụng:
 
-![Video Walkthrough](demo.gif)
+![Video Walkthrough](public/images/demo.gif)
 
 Tạo ảnh GIF với chương trình [LiceCap](http://www.cockos.com/licecap/).
 
