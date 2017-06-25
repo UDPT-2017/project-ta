@@ -3,7 +3,7 @@
 **Name of your app** là repository cho đồ án nhóm. Nhóm tối đa 4 thành viên.
 
 Thành viên:
-* [x] **1412002** - Dương Trường An - truọngan106 - truongan106@gmail.com - 100%
+* [x] **1412002** - Dương Trường An - truongan106 - truongan106@gmail.com - 100%
 
 URL: **https://github.com/UDPT-2017/project-ta/**
 Báo cáo: **URL Github Page của đề tài**
