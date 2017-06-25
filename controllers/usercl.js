@@ -7,7 +7,7 @@ var Cookies = require('cookies')
 var nguoidung = {
 	login:function(req,res){
 		res.render('user-login', {
-	     	message: "",
+	     	message: "Xin chao",
 	   });
 	},
 	checklogin:function (req,res) {
